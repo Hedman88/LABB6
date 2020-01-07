@@ -125,8 +125,14 @@ void DoublyLinkedList::displayForward() {
 	}
 }
 void DoublyLinkedList::displayBackward() {
-
+	if (nodeAmount == 0) {
+		cout << "List contains no nodes." << endl;
+		return;
+	}
+	for (int i = nodeAmount - 1; i >= 0; i--) {
+		cout << "Node " << i << ": " << nodeAt(i)->getData() << endl;
+	}
 }
 int DoublyLinkedList::size() {
-	return 0;
+	return nodeAmount;
 }

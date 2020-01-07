@@ -21,6 +21,8 @@ int main() {
 
 	dlist.displayForward();
 
+	dlist.displayBackward();
+
 	cin.get();
 	return 0;
 }
