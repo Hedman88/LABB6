@@ -28,10 +28,11 @@ void Rectangle::render(SDL_Renderer *renderer) {
 	rect->w = width;
 	rect->h = height;
 	SDL_RenderFillRect(renderer, rect);
-	/*SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + width, position.getY());
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, a);
+	SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + width, position.getY());
 	SDL_RenderDrawLineF(renderer, position.getX() + width, position.getY(), position.getX() + width, position.getY() + height);
 	SDL_RenderDrawLineF(renderer, position.getX() + width, position.getY() + height, position.getX(), position.getY() + height);
-	SDL_RenderDrawLineF(renderer, position.getX(), position.getY() + height, position.getX(), position.getY());*/
+	SDL_RenderDrawLineF(renderer, position.getX(), position.getY() + height, position.getX(), position.getY());
 }
 
 const float Rectangle::getWidth() {

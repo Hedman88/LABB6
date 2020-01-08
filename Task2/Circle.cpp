@@ -24,6 +24,19 @@ void Circle::render(SDL_Renderer *renderer) {
 	SDL_SetRenderDrawColor(renderer, r, g, b, a);
 	int k = 360;
 	double twoPi = 2 * M_PI;
+	for (int w = 0; w < radius * 2; w++)
+	{
+		int x, y, x2, y2;
+		int dx = radius - w;
+		int dy = SDL_sqrt((radius*radius)-(dx*dx));
+		x = dx;
+		y = dy;
+		x2 = dx;
+		y2 = -dy;
+		SDL_RenderDrawLine(renderer, position.getX() + x, position.getY() + y, position.getX() + x2, position.getY() + y2);
+	}
+
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, a);
 	for (int i = 0; i < k; i++) {
 		SDL_RenderDrawLineF(renderer, 
 			position.getX() + cos((twoPi / k)*i)*radius, position.getY() + sin((twoPi / k)*i)*radius,

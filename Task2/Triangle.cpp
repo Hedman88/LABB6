@@ -22,6 +22,20 @@ void Triangle::render(SDL_Renderer *renderer) {
 	b = RGBA << 16; b = b >> 24;
 	a = RGBA << 24; a = a >> 24;
 	SDL_SetRenderDrawColor(renderer, r, g, b, a);
+	for (int w = 0; w < base/2; w++)
+	{
+		int x, y, x2, y2;
+		int dx = base/2 - w;
+		int dy = dx*height / (base/2);
+		x = dx;
+		y = dy;
+		x2 = dx;
+		y2 = height;
+		SDL_RenderDrawLine(renderer, position.getX() + x, position.getY() + y, position.getX() + x2, position.getY() + y2);
+		SDL_RenderDrawLine(renderer, position.getX() - x, position.getY() + y, position.getX() - x2, position.getY() + y2);
+	}
+	SDL_RenderDrawLine(renderer, position.getX(), position.getY(), position.getX(), position.getY() + height);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, a);
 	SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + base / 2, position.getY() + height);
 	SDL_RenderDrawLineF(renderer, position.getX() + base / 2, position.getY() + height, position.getX() - base / 2, position.getY() + height);
 	SDL_RenderDrawLineF(renderer, position.getX() - base / 2, position.getY() + height, position.getX(), position.getY());
