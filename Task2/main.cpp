@@ -8,9 +8,9 @@
 
 using namespace std;
 
-void testRendering(vector<Shape*> shapes, SDL_Renderer *renderer) {
-	for (int i = 0; i < shapes.size(); i++) {
-		shapes[i]->render(renderer);
+void testRendering(vector<Shape*>* shapes, SDL_Renderer *renderer) {
+	for (int i = 0; i < shapes->size(); i++) {
+		(*shapes)[i]->render(renderer);
 	}
 }
 /*
@@ -54,14 +54,13 @@ int main(int argc, char *argv[]) {
 			g = rand() % 256;
 			b = rand() % 256;
 			a = rand() % 206 + 50;
-			//cout << r << g << b << a << endl;
 			rgba = r << 8;
 			rgba = (rgba + g) << 8;
 			rgba = (rgba + b) << 8;
 			rgba = (rgba + a);
 
-			posX = rand() % 1200;
-			posY = rand() % 680;
+			posX = rand() % 1100;
+			posY = rand() % 600;
 			size = rand() % 250 + 50;
 			width = rand() % 250 + 50;
 
@@ -74,26 +73,23 @@ int main(int argc, char *argv[]) {
 				case SDLK_c: {
 					Circle* c = new Circle(size, Point2D(posX, posY), rgba);
 					//shapes.push_back(c);
-					//testRendering(shapes, renderer);
 					c->render(renderer);
 					break;
 				}
 				case SDLK_r: {
 					Rectangle* a = new Rectangle(size, width, Point2D(posX, posY), rgba);
 					//shapes.push_back(a);
-					//testRendering(shapes, renderer);
 					a->render(renderer);
 					break;
 				}
 				case SDLK_t: {
 					Triangle* b = new Triangle(size, width, Point2D(posX, posY), rgba);
 					//shapes.push_back(b);
-					//testRendering(shapes, renderer);
 					b->render(renderer);
 					break;
 				}
 				case SDLK_x: {
-					shapes.clear();
+					//shapes.clear();
 					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 					SDL_RenderClear(renderer);
 					break;
@@ -114,8 +110,11 @@ int main(int argc, char *argv[]) {
 						   break;
 			}
 		}
-		SDL_Delay(17);
+		/*SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+		SDL_RenderClear(renderer);
+		testRendering(&shapes, renderer);*/
 		SDL_RenderPresent(renderer);
+		SDL_Delay(17);
 	}
 
 

@@ -28,6 +28,7 @@ void Rectangle::render(SDL_Renderer *renderer) {
 	rect->w = width;
 	rect->h = height;
 	SDL_RenderFillRect(renderer, rect);
+	delete rect;
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, a);
 	SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + width, position.getY());
 	SDL_RenderDrawLineF(renderer, position.getX() + width, position.getY(), position.getX() + width, position.getY() + height);
