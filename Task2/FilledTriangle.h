@@ -1,13 +1,14 @@
 #pragma once
 #include "SDL.h"
 #include "Shape.h"
-class Triangle:public Shape
+class FilledTriangle:public Shape
 {
+protected:
 	float base;
 	float height;
 public:
-	Triangle(float base, float height, Point2D position, unsigned int RGBA);
-	~Triangle();
+	FilledTriangle(float base, float height, Point2D position, unsigned int RGBA);
+	~FilledTriangle();
 	void render(SDL_Renderer *renderer);
 	const float getBase();
 	const float getHeight();

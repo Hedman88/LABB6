@@ -1,20 +1,20 @@
-#include "Circle.h"
+#include "FilledCircle.h"
 #include <iostream>
 #include <math.h>
 
 using namespace std;
 
-Circle::Circle(float radius, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
+FilledCircle::FilledCircle(float radius, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
 {
 	this->radius = radius;
 }
 
 
-Circle::~Circle()
+FilledCircle::~FilledCircle()
 {
 }
 
-void Circle::render(SDL_Renderer *renderer) {
+void FilledCircle::render(SDL_Renderer *renderer) {
 	cout << endl << "---Circle---" << endl << "Position: " << position.toString() << endl << "Radius: " << radius << endl;
 	int r, g, b, a;
 	r = RGBA >> 24;
@@ -44,9 +44,9 @@ void Circle::render(SDL_Renderer *renderer) {
 	}
 }
 
-const float Circle::getRadius() {
+const float FilledCircle::getRadius() {
 	return radius;
 }
-void Circle::setRadius(float width) {
+void FilledCircle::setRadius(float width) {
 	this->radius = radius;
 }

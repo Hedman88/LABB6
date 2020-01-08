@@ -1,7 +1,10 @@
 #include "SDL.h"
-#include "Rectangle.h"
-#include "Triangle.h"
-#include "Circle.h"
+#include "FilledRectangle.h"
+#include "FilledTriangle.h"
+#include "FilledCircle.h"
+#include "RectangleOutline.h"
+#include "TriangleOutline.h"
+#include "CircleOutline.h"
 #include "time.h"
 #include <vector>
 #include <iostream>
@@ -71,21 +74,24 @@ int main(int argc, char *argv[]) {
 				switch (event.key.keysym.sym) {
 
 				case SDLK_c: {
-					Circle* c = new Circle(size, Point2D(posX, posY), rgba);
+					FilledCircle* c = new FilledCircle(size, Point2D(posX, posY), rgba);
 					//shapes.push_back(c);
 					c->render(renderer);
 					break;
 				}
 				case SDLK_r: {
-					Rectangle* a = new Rectangle(size, width, Point2D(posX, posY), rgba);
+					FilledRectangle* a = new FilledRectangle(size, width, Point2D(posX, posY), rgba);
 					//shapes.push_back(a);
 					a->render(renderer);
 					break;
 				}
 				case SDLK_t: {
-					Triangle* b = new Triangle(size, width, Point2D(posX, posY), rgba);
+					FilledTriangle* b = new FilledTriangle(size, width, Point2D(posX, posY), rgba);
+					TriangleOutline* b2 = new TriangleOutline(size, width, Point2D(posX, posY));
 					//shapes.push_back(b);
 					b->render(renderer);
+					b2->render(renderer);
+
 					break;
 				}
 				case SDLK_x: {

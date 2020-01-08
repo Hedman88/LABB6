@@ -121,19 +121,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="CircleOutline.cpp" />
+    <ClCompile Include="FilledCircle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point2D.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="FilledRectangle.cpp" />
+    <ClCompile Include="RectangleOutline.cpp" />
     <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="FilledTriangle.cpp" />
+    <ClCompile Include="TriangleOutline.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Circle.h" />
+    <ClInclude Include="CircleOutline.h" />
+    <ClInclude Include="FilledCircle.h" />
     <ClInclude Include="Point2D.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="FilledRectangle.h" />
+    <ClInclude Include="RectangleOutline.h" />
     <ClInclude Include="Shape.h" />
-    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="FilledTriangle.h" />
+    <ClInclude Include="TriangleOutline.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,20 +1,20 @@
-#include "Rectangle.h"
+#include "FilledRectangle.h"
 #include <iostream>
 
 using namespace std;
 
-Rectangle::Rectangle(float width, float height, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
+FilledRectangle::FilledRectangle(float width, float height, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
 {
 	this->width = width;
 	this->height = height;
 }
 
 
-Rectangle::~Rectangle()
+FilledRectangle::~FilledRectangle()
 {
 }
 
-void Rectangle::render(SDL_Renderer *renderer) {
+void FilledRectangle::render(SDL_Renderer *renderer) {
 	cout << endl << "---Rectangle---" << endl << "Position: " << position.toString() << endl << "Width: " << width << endl << "Height: " << height << endl; 
 	int r, g, b, a;
 	r = RGBA >> 24;
@@ -36,15 +36,15 @@ void Rectangle::render(SDL_Renderer *renderer) {
 	SDL_RenderDrawLineF(renderer, position.getX(), position.getY() + height, position.getX(), position.getY());
 }
 
-const float Rectangle::getWidth() {
+const float FilledRectangle::getWidth() {
 	return width;
 }
-const float Rectangle::getHeight() {
+const float FilledRectangle::getHeight() {
 	return height;
 }
-void Rectangle::setWidth(float width) {
+void FilledRectangle::setWidth(float width) {
 	this->width = width;
 }
-void Rectangle::setHeight(float height) {
+void FilledRectangle::setHeight(float height) {
 	this->height = height;
 }

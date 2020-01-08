@@ -1,20 +1,20 @@
-#include "Triangle.h"
+#include "FilledTriangle.h"
 #include <iostream>
 
 using namespace std;
 
-Triangle::Triangle(float base, float height, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
+FilledTriangle::FilledTriangle(float base, float height, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
 {
 	this->base = base;
 	this->height = height;
 }
 
 
-Triangle::~Triangle()
+FilledTriangle::~FilledTriangle()
 {
 }
 
-void Triangle::render(SDL_Renderer *renderer) {
+void FilledTriangle::render(SDL_Renderer *renderer) {
 	cout << endl << "---Triangle---" << endl << "Position: " << position.toString() << endl << "Base: " << base << endl << "Height: " << height << endl;
 	int r, g, b, a;
 	r = RGBA >> 24;
@@ -35,21 +35,17 @@ void Triangle::render(SDL_Renderer *renderer) {
 		SDL_RenderDrawLine(renderer, position.getX() - x, position.getY() + y, position.getX() - x2, position.getY() + y2);
 	}
 	SDL_RenderDrawLine(renderer, position.getX(), position.getY(), position.getX(), position.getY() + height);
-	SDL_SetRenderDrawColor(renderer, 255, 255, 255, a);
-	SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + base / 2, position.getY() + height);
-	SDL_RenderDrawLineF(renderer, position.getX() + base / 2, position.getY() + height, position.getX() - base / 2, position.getY() + height);
-	SDL_RenderDrawLineF(renderer, position.getX() - base / 2, position.getY() + height, position.getX(), position.getY());
 }
 
-const float Triangle::getBase() {
+const float FilledTriangle::getBase() {
 	return base;
 }
-const float Triangle::getHeight() {
+const float FilledTriangle::getHeight() {
 	return height;
 }
-void Triangle::setBase(float width) {
+void FilledTriangle::setBase(float width) {
 	this->base = base;
 }
-void Triangle::setHeight(float height) {
+void FilledTriangle::setHeight(float height) {
 	this->height = height;
 }
