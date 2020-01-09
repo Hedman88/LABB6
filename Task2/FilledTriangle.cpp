@@ -35,6 +35,12 @@ void FilledTriangle::render(SDL_Renderer *renderer) {
 		SDL_RenderDrawLine(renderer, position.getX() - x, position.getY() + y, position.getX() - x2, position.getY() + y2);
 	}
 	SDL_RenderDrawLine(renderer, position.getX(), position.getY(), position.getX(), position.getY() + height);
+
+	cout << endl << "---Triangle---" << endl << "Position: " << position.toString() << endl << "Base: " << base << endl << "Height: " << height << endl;
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderDrawLineF(renderer, position.getX(), position.getY(), position.getX() + base / 2, position.getY() + height);
+	SDL_RenderDrawLineF(renderer, position.getX() + base / 2, position.getY() + height, position.getX() - base / 2, position.getY() + height);
+	SDL_RenderDrawLineF(renderer, position.getX() - base / 2, position.getY() + height, position.getX(), position.getY());
 }
 
 const float FilledTriangle::getBase() {

@@ -3,6 +3,10 @@
 
 using namespace std;
 
+Shape::Shape() {
+
+}
+
 Shape::Shape(Point2D position, unsigned int RGBA)
 {
 	this->position = position;

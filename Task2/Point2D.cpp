@@ -53,10 +53,10 @@ bool Point2D::operator==(const Point2D &o) {
 	return ((x == o.x) && (y == o.y));
 }
 
-float Point2D::getX() {
+float Point2D::getX() const {
 	return x;
 }
 
-float Point2D::getY() {
+float Point2D::getY() const {
 	return y;
 }

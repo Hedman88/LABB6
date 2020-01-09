@@ -3,6 +3,10 @@
 
 using namespace std;
 
+FilledRectangle::FilledRectangle() {
+
+}
+
 FilledRectangle::FilledRectangle(float width, float height, Point2D position, unsigned int RGBA) : Shape(position, RGBA)
 {
 	this->width = width;

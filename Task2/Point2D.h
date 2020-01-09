@@ -13,7 +13,7 @@ public:
 	Point2D operator+(const Point2D &o);
 	Point2D &operator=(const Point2D &o);
 	bool operator==(const Point2D &o);
-	float getX();
-	float getY();
+	float getX() const;
+	float getY() const;
 };
 

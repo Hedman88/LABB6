@@ -7,6 +7,7 @@ protected:
 	Point2D position;
 	unsigned int RGBA = 00000000;
 public:
+	Shape();
 	Shape(Point2D position, unsigned int RGBA);
 	~Shape();
 	virtual void render(SDL_Renderer *renderer) = 0;
