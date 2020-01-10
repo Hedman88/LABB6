@@ -15,5 +15,6 @@ public:
 	void setPos(Point2D newPos);
 	const unsigned int getRGBA();
 	void setRGBA(unsigned int newRGBA);
+	virtual bool hitbox(int mouseX, int mouseY) = 0;
 };
 

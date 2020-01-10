@@ -15,5 +15,6 @@ public:
 	const float getHeight();
 	void setWidth(float width);
 	void setHeight(float height);
+	bool hitbox(int mouseX, int mouseY);
 };
 

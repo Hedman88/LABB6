@@ -10,7 +10,7 @@ Shape::Shape() {
 Shape::Shape(Point2D position, unsigned int RGBA)
 {
 	this->position = position;
-	this->RGBA = RGBA;
+	setRGBA(RGBA);
 }
 
 
