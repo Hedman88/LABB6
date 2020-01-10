@@ -1,0 +1,10 @@
+1. I have learned a great deal here. I knew practically nothing about SDL and now I know how to draw filled geometric figures pretty efficiently.
+I learned how to check if you clicked inside an object. I've learned how to properly render a game, etc.
+
+2. The most difficult thing I faced in this lab was filling a circle. I looked up how to do it and found someone drawing a filled circle using points.
+This took really long to draw, especially if the circle was large. Solved it by coming together with Magnus and Morgan and finding a formula to find two
+points to use in drawing a line for every x coordinate instead of points.
+
+3. I don't know.
+
+Estimated time:
